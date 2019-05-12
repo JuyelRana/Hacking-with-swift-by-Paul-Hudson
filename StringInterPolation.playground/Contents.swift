@@ -2,7 +2,7 @@ import UIKit
 
 var name = "Juyel Rana"
 var age = 25
-var latitude = 36.166667
+var latitude = 36.16667
 
 print("Your name is \(name), Your age is \(age), and your latitude is \(latitude).")
 
