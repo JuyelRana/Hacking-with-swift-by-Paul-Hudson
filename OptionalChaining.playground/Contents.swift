@@ -8,13 +8,13 @@ func albumReleased(year:  Int) -> String? {
     }
 }
 
-let album = albumReleased(year: 2006)
+let album = albumReleased(year: 2006) ?? "unknown"
 print("The album is \(album)")
 
 let str = "Hello World"
 print(str.uppercased())
 
-let album2 = albumReleased(year: 2006) ?? "unknown"
-print("The album is \()")
+let album2 = albumReleased(year: 2002) ?? "unknown"
+print("The album is \(album2)")
 
 
