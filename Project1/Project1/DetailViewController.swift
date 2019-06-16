@@ -19,6 +19,8 @@ class DetailViewController: UIViewController {
         title = selectedImage
         navigationItem.largeTitleDisplayMode = .never
         //navigationController?.navigationBar.backgroundColor = .red
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTabbed))
 
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
@@ -45,5 +47,16 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @objc func shareTabbed(){   //This is objective function
+        guard let image = imageView.image?.jpegData(compressionQuality: 0.8) else {
+            print("No image found")
+            return
+        }
+        
+        let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }
 
 }
